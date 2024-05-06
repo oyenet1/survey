@@ -24,6 +24,7 @@ class User extends Authenticatable
         'ward',
         'community',
         'lga_id',
+        'role',
         'password',
     ];
 
