@@ -5,7 +5,21 @@
             <ol class="space-y-8 list-outside list-decimal">
                 <li>
                     <div class="space-y-2">
-                        <label for="" class="w-full">What specific banking services do you believe are lacking in
+                        <label for="enum" class="w-full">Select Enumerator</label>
+                        <select name="" wire:model='user_id' id="enum"
+                            class="px-4 py-2 block w-full max-w-[500px] border capitalize rounded">
+                            @foreach (\App\Models\User::with(['lga.state'])->get() as $enumerator)
+                                <option value="{{ $enumerator->id }}">
+                                    {{ $enumerator->name . ' lga-' . $enumerator->lga->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="space-y-2">
+                        <label for="" class="w-full">What specific banking services do you believe are lacking
+                            in
                             your
                             area?</label>
                         <input type="text" wire:model='service_lacking' placeholder="write your answer here"
@@ -18,16 +32,16 @@
                             services in your coomunity?</label>
 
                         @foreach (['yes', 'no', 'maybe'] as $index => $item)
-                            <fieldset>
+                            <fieldset class="cursor-pointer">
                                 <input wire:model.live='additional_banking_service' id="{{ $index }}"
-                                    type="radio" class="p-1">
+                                    type="radio" class="p-1 cursor-pointer">
                                 <label for="{{ $index }}" value="{{ $item }}"
-                                    class="capitalize">{{ $item }}</label>
+                                    class="capitalize cursor-pointer">{{ $item }}</label>
                             </fieldset>
                         @endforeach
                     </div>
                 </li>
-                <li></li>
+
                 <li></li>
                 <li></li>
             </ol>
