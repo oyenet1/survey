@@ -17,7 +17,13 @@ class SurveyFactory extends Factory
     public function definition(): array
     {
         return [
-            'service_lacking' => fake()->randomElement(),
+            'service_lacking' => fake()->randomElement([
+                'Limited Credit Access',
+                'Few Physical Branches',
+                'Reduced Relationship Banking',
+                'Low Financial Literacy',
+                'Limited Digital Services'
+            ]),
             'user_id' => random_int(2, 50),
             'additional_banking_service' => fake()->randomElement(['yes', 'no', 'maybe'])
         ];

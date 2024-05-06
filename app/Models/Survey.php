@@ -22,6 +22,7 @@ class Survey extends Model
 
     public static function booted()
     {
+        parent::booted();
         self::created(function ($survey) {
             $survey->update(['lga_id' => $survey->enumerator->lga_id]);
         });
