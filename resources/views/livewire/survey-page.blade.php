@@ -17,11 +17,12 @@
                         <label for="" class="w-full">Do you feel like there is an need for additional banking
                             services in your coomunity?</label>
 
-                        @foreach (['yes', 'no', 'maybe'] as $item)
+                        @foreach (['yes', 'no', 'maybe'] as $index => $item)
                             <fieldset>
-                                <input wire:model.live='additional_banking_service' id="{{ $item }}"
+                                <input wire:model.live='additional_banking_service' id="{{ $index }}"
                                     type="radio" class="p-1">
-                                <label for="{{ $item }}" class="capitalize">{{ $item }}</label>
+                                <label for="{{ $index }}" value="{{ $item }}"
+                                    class="capitalize">{{ $item }}</label>
                             </fieldset>
                         @endforeach
                     </div>

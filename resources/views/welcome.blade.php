@@ -20,7 +20,7 @@
     <div class="w-full max-w-5xl my-8 mx-auto ng-gray-50 rounded-lg p-6 shadow">
         <div class="p-4 space-y-6">
             <img src="{{ asset('img/logo.png') }}" alt="survey"
-                class="block rounded-full mx-auto aspect-video  h-32 object-cover">
+                class="block rounded-full mx-auto aspect-video  h-40 object-cover">
             <div class="space-y-3">
                 <h1 class="text-3xl font-semibold text-center text-blue-500">Welcome to Survey Sphere</h1>
                 <p class="text-lg text-center font-semibold">Click on the state below to start</p>
