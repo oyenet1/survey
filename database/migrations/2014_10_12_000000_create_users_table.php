@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Lga::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('ward')->nullable();
+            $table->string('role')->nullable()->default('enumerator');
             $table->string('community')->nullable();
             $table->string('password');
             $table->rememberToken();
