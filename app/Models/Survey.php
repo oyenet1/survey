@@ -10,6 +10,14 @@ class Survey extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'services' => 'array',
+        'lenders' => 'array',
+        'others' => 'array',
+        'payment_methods' => 'array',
+        'fintechs' => 'array',
+    ];
+
     function lga(): BelongsTo
     {
         return $this->belongsTo(Lga::class);
