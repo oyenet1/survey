@@ -10,6 +10,7 @@ use Livewire\Component;
 class SurveyPage extends Component
 {
     public State $state;
+    public $user_id, $service_lacking, $additional_banking_service;
 
 
     function submitSurvey()
@@ -20,9 +21,11 @@ class SurveyPage extends Component
             'additional_banking_service' => 'required'
         ]);
 
+
         $done = Survey::create($data);
 
         if ($done) {
+            $this->reset();
             session()->flash('success', 'Survey submitted successfully');
         }
     }

@@ -30,21 +30,20 @@
                     <div class="space-y-2">
                         <label for="" class="w-full">Do you feel like there is an need for additional banking
                             services in your coomunity?</label>
-
-                        @foreach (['yes', 'no', 'maybe'] as $index => $item)
-                            <fieldset class="cursor-pointer">
-                                <input wire:model.live='additional_banking_service' id="{{ $index }}"
-                                    type="radio" class="p-1 cursor-pointer">
-                                <label for="{{ $index }}" value="{{ $item }}"
-                                    class="capitalize cursor-pointer">{{ $item }}</label>
-                            </fieldset>
-                        @endforeach
+                        <fieldset class="cursor-pointer flex flex-col">
+                            @foreach (['yes', 'no', 'maybe'] as $index => $item)
+                                <div class="space-x-2">
+                                    <input wire:model.live='additional_banking_service' id="{{ $index }}"
+                                        type="radio" value="{{ $item }}" class="p-1 cursor-pointer">
+                                    <label for="{{ $index }}"
+                                        class="capitalize cursor-pointer">{{ $item }}</label>
+                                </div>
+                            @endforeach
+                        </fieldset>
                     </div>
                 </li>
-
-                <li></li>
-                <li></li>
             </ol>
+            <button class="px-6 py-2 my-3 bg-blue-500 text-white rounded max-w-max mx-auto font-medium">Submit</button>
         </form>
     </div>
 </div>

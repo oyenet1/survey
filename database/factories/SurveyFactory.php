@@ -24,7 +24,7 @@ class SurveyFactory extends Factory
                 'Low Financial Literacy',
                 'Limited Digital Services'
             ]),
-            'user_id' => random_int(2, 50),
+            'user_id' => random_int(2, 6),
             'additional_banking_service' => fake()->randomElement(['yes', 'no', 'maybe'])
         ];
     }
