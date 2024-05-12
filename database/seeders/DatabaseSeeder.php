@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             StateSeeder::class,
             UserSeeder::class,
-            SurveySeeder::class
+            // SurveySeeder::class
         ]);
         User::create([
             'name' => 'Bowofade Oyerinde',
