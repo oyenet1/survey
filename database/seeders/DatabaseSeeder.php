@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'Kelswashima@gmail.com',
             'phone' => '+2348060751921',
             'password' => bcrypt('admin'),
-            'ward' => 'Oriade',
+            'ward' => 'tekun',
             'lga_id' => random_int(1, 50),
             'role' => 'admin'
         ]);
