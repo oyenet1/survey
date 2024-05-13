@@ -16,6 +16,8 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Concerns\InteractsWithForms;
 
 class SurveyPage extends Component implements HasForms
@@ -25,7 +27,7 @@ class SurveyPage extends Component implements HasForms
     public ?array $data = [];
 
     public State $state;
-    public $user_id, $service_lacking, $additional_banking_service;
+    public $user_id;
 
 
     function submitSurvey()
@@ -81,7 +83,7 @@ class SurveyPage extends Component implements HasForms
                                 ->inline()
                                 // ->inlineLabel(false)
                                 ->required(),
-                            TextInput::make('children')
+                            TextInput::make('wives')
                                 ->label('If Yes, how many wives do you have')
                                 ->default(null)
                                 ->nullable()
@@ -140,7 +142,7 @@ class SurveyPage extends Component implements HasForms
                                 ->label('If No, what are the reasons for not having a bank account?')
                                 ->autosize()
                                 ->columnSpanFull()
-                                ->required(),
+                                ->nullable(),
                             TagsInput::make('services')
                                 ->label('What banking services are you using? (e.g savings,loans,insurance,investments)')
                                 ->suggestions([
@@ -196,18 +198,7 @@ class SurveyPage extends Component implements HasForms
                     Wizard\Step::make('Step 3')
                         ->completedIcon('heroicon-m-hand-thumb-up')
                         ->schema([
-                            Select::make('payment_methods')
-                                ->options([
-                                    'cash' => 'Cash',
-                                    'pos' => 'Pos',
-                                    'debit card' => 'Debit Card',
-                                    'bank transfer' => 'Bank Transfer'
-                                ])
-                                ->columnSpanFull()
-                                ->label('How do you typically pay for purchases')
-                                ->native(false)
-                                ->multiple()
-                                ->required(),
+
                             Radio::make('feel_safe')
                                 ->label('Do you feel safe visiting a bank to carry out transactions?')
                                 ->extraAttributes(['class' => 'focus:text-primary text-primary'])
@@ -216,6 +207,24 @@ class SurveyPage extends Component implements HasForms
                                 ->inlineLabel(false)
                                 ->columnSpanFull()
                                 ->required(),
+                            CheckboxList::make('payment_methods')
+                                ->label('How do you typically pay for purchases')
+                                ->options([
+                                    'cash' => 'Cash',
+                                    'pos' => "Pos",
+                                    'debit card' => "Debit Card",
+                                    'bank transfer' => "Bank Transfer"
+                                ])
+                                //   ->options([
+                                //     'cash',
+                                //     'pos',
+                                //     'debit-card',
+                                //     'bank-transfer'
+                                // ])
+                                ->extraAttributes(['class' => 'capitalize'])
+                                ->required()
+                                ->columnSpanFull(),
+
                             Radio::make('affected_by_insecurity')
                                 ->label('Does insecurity affect your daily work life?')
                                 ->extraAttributes(['class' => 'focus:text-primary text-primary'])
@@ -233,6 +242,7 @@ class SurveyPage extends Component implements HasForms
                                 // 1.	Which fintech brands are you subscribed to? (Check all that apply)
                                 ->boolean()
                                 ->inline()
+                                ->inLinelabel(false)
                                 ->columnSpanFull()
                                 ->required(),
                             TagsInput::make('fintechs')
@@ -242,9 +252,14 @@ class SurveyPage extends Component implements HasForms
                                 ])
                                 ->splitKeys(['Tab', ' ', ","])
                                 ->required(),
-                            Select::make('payment_methods')
+                            Select::make('saving_methods')
                                 ->options([
-                                    'Under your pillow', 'With a bank', 'With a fintech platform', 'With a local savings group', 'With a co-operative society', 'Other'
+                                    'Under your pillow' => 'Under your pillow',
+                                    'With a bank' => 'With a bank',
+                                    'With a fintech platform' => 'With a fintech platform',
+                                    'With a local savings group' => 'With a local savings group',
+                                    'With a co-operative society' => 'With a co-operative society',
+                                    'Other' => 'Other'
                                 ])
                                 ->label('How do you save money?')
                                 ->native(false)
@@ -280,7 +295,15 @@ class SurveyPage extends Component implements HasForms
 
     public function create()
     {
-        dd($this->form->getState());
+        $done = $this->state->surveys()->create($this->form->getState());
+
+        if ($done) {
+            Notification::make()
+                ->title('Submitted')
+                ->body('Survey submitted successfully')
+                ->success()
+                ->send();
+        }
     }
 
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Lga;
+use App\Models\State;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->string('age_range');
             $table->string('gender');
             $table->string('marital_status')->nullable();
-            $table->integer('children')->nullable()->default(0);
+            $table->integer('wives')->nullable()->default(0);
             $table->string('location')->nullable();
             $table->string('occupation')->default('jobless');
             $table->string('monthly_income_range')->default('below 20000');
@@ -37,12 +38,14 @@ return new class extends Migration
             $table->string('phone_type')->nullable();
             $table->boolean('feel_safe')->nullable();
             $table->boolean('use_phone');
+            $table->string('saving_methods');
             $table->json('payment_methods')->nullable();
             $table->boolean('use_fintech')->default(false);
             $table->json('fintechs');
             $table->string('mode_of_savings')->nullable();
             $table->boolean('pays_interest_on_loan')->nullable();
             $table->boolean('happy_to_pay_interest')->nullable();
+            $table->foreignIdFor(State::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(User::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Lga::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();

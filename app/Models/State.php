@@ -14,4 +14,10 @@ class State extends Model
     {
         return $this->hasMany(Lga::class);
     }
+
+
+    function surveys(): HasMany
+    {
+        return $this->hasMany(Survey::class);
+    }
 }

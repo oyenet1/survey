@@ -10,10 +10,11 @@ class Survey extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $casts = [
         'services' => 'array',
         'lenders' => 'array',
-        'others' => 'array',
         'payment_methods' => 'array',
         'fintechs' => 'array',
     ];
@@ -21,6 +22,10 @@ class Survey extends Model
     function lga(): BelongsTo
     {
         return $this->belongsTo(Lga::class);
+    }
+    function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
     }
 
     function enumerator(): BelongsTo
@@ -31,8 +36,11 @@ class Survey extends Model
     public static function booted()
     {
         parent::booted();
-        self::created(function ($survey) {
+        self::creating(function ($survey) {
             // $survey->update(['lga_id' => $survey->enumerator->lga_id]);
+            if (auth()->check()) {
+                $survey->user_id = auth()->id();
+            }
         });
     }
 }
