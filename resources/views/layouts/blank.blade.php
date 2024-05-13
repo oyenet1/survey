@@ -27,8 +27,10 @@
 <body class="antialiased bg-neutral-100">
     <div class="w-full max-w-5xl p-6 px-6 mx-auto my-8 bg-white rounded-lg shadow lg:px-16 2xl:px-20 ng-gray-50">
         <div>
-            <img src="{{ asset('img/logo.png') }}" alt="survey"
-                class="block object-cover h-32 mx-auto rounded-full aspect-video">
+            <a href="/" class="block mx-auto text-center max-w-max">
+                <img src="{{ asset('img/logo.png') }}" alt="survey"
+                    class="block object-cover h-32 mx-auto rounded-full aspect-video">
+            </a>
             <div class="space-y-3">
                 <h1 class="text-3xl font-semibold text-center text-primary">Welcome to Survey Sphere</h1>
 
