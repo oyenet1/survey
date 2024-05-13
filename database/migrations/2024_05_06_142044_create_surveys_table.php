@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('age_range');
             $table->string('gender');
             $table->string('marital_status')->nullable();
+            $table->integer('children')->nullable()->default(0);
             $table->string('location')->nullable();
             $table->string('occupation')->default('jobless');
             $table->string('monthly_income_range')->default('below 20000');
@@ -27,14 +28,15 @@ return new class extends Migration
             $table->text('no_bank_account_reasons')->nullable();
             $table->boolean('has_borrowed_before');
             $table->json('services')->nullable();
-            $table->string('usage');
+            $table->string('usage')->nullable();
             $table->json('lenders')->nullable();
             $table->json('others')->nullable();
             $table->boolean('own_mobile_phone')->nullable();
             $table->boolean('affected_by_insecurity')->default(false);
             $table->longText('insecurity_details')->nullable();
             $table->string('phone_type')->nullable();
-            $table->string('additional_banking_service');
+            $table->boolean('feel_safe')->nullable();
+            $table->boolean('use_phone');
             $table->json('payment_methods')->nullable();
             $table->boolean('use_fintech')->default(false);
             $table->json('fintechs');

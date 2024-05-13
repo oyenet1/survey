@@ -1,11 +1,13 @@
 <div>
     <div class="p-4 space-y-4 ">
-        <h1 class="text-2xl font-semibold text-center">Fill the form below</h1>
+        {{-- <h1 class="text-2xl font-semibold text-center">Fill the form below</h1> --}}
+        <h1 class="text-2xl font-semibold text-center">Demographic Information</h1>
         <form wire:submit='create'>
             {{ $this->form }}
 
-            <button type="submit"
-                class="px-6 py-2 mx-auto my-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-700 max-w-max">Submit</button>
+            {{-- <button type="submit"
+                class="px-6 py-2 mx-auto my-3 font-medium text-white rounded bg-primary hover:bg-secondary hover:text-black max-w-max">Submit</button>
+         --}}
         </form>
         {{-- <form wire:submit='submitSurvey' class="grid grid-cols-1">
             <ol class="space-y-8 list-decimal list-outside">

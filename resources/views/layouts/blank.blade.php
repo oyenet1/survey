@@ -24,7 +24,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="survey"
                 class="block object-cover h-32 mx-auto rounded-full aspect-video">
             <div class="space-y-3">
-                <h1 class="text-3xl font-semibold text-center text-blue-500">Welcome to Survey Sphere</h1>
+                <h1 class="text-3xl font-semibold text-center text-primary">Welcome to Survey Sphere</h1>
 
             </div>
         </div>

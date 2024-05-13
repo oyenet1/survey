@@ -13,11 +13,16 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: "#73C3E8",
+                secondary: "#E8E972",
+            },
+        },
     },
-    plugins: {
-        "tailwindcss/nesting": "postcss-nesting",
-        tailwindcss: {},
-        autoprefixer: {},
-    },
+    plugins: [
+        // "tailwindcss/nesting": "postcss-nesting",
+        // // tailwindcss: {},
+        // // autoprefixer: {},
+    ],
 };
