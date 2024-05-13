@@ -32,7 +32,7 @@ class Survey extends Model
     {
         parent::booted();
         self::created(function ($survey) {
-            $survey->update(['lga_id' => $survey->enumerator->lga_id]);
+            // $survey->update(['lga_id' => $survey->enumerator->lga_id]);
         });
     }
 }

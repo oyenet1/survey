@@ -1,8 +1,14 @@
 <div>
-    <div class=" p-4 space-y-4">
+    <div class="p-4 space-y-4 ">
         <h1 class="text-2xl font-semibold text-center">Fill the form below</h1>
-        <form wire:submit='submitSurvey' class="grid grid-cols-1">
-            <ol class="space-y-8 list-outside list-decimal">
+        <form wire:submit='create'>
+            {{ $this->form }}
+
+            <button type="submit"
+                class="px-6 py-2 mx-auto my-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-700 max-w-max">Submit</button>
+        </form>
+        {{-- <form wire:submit='submitSurvey' class="grid grid-cols-1">
+            <ol class="space-y-8 list-decimal list-outside">
                 <li>
                     <div class="space-y-2">
                         <label for="enum" class="w-full">Select Enumerator</label>
@@ -30,7 +36,7 @@
                     <div class="space-y-2">
                         <label for="" class="w-full">Do you feel like there is an need for additional banking
                             services in your coomunity?</label>
-                        <fieldset class="cursor-pointer flex flex-col">
+                        <fieldset class="flex flex-col cursor-pointer">
                             @foreach (['yes', 'no', 'maybe'] as $index => $item)
                                 <div class="space-x-2">
                                     <input wire:model.live='additional_banking_service' id="{{ $index }}"
@@ -43,7 +49,9 @@
                     </div>
                 </li>
             </ol>
-            <button class="px-6 py-2 my-3 bg-blue-500 text-white rounded max-w-max mx-auto font-medium">Submit</button>
-        </form>
+            <button class="px-6 py-2 mx-auto my-3 font-medium text-white bg-blue-500 rounded max-w-max">Submit</button>
+        </form> --}}
     </div>
+
+    <x-filament-actions::modals />
 </div>
