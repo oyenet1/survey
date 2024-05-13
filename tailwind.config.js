@@ -16,7 +16,7 @@ export default {
     ],
 
     theme: {
-        ...defaultTheme,
+        // ...defaultTheme,
         extend: {
             colors: {
                 primary: "#73C3E8",

@@ -47,5 +47,8 @@
                 </x-button>
             </div>
         </form>
+        <div class="block max-w-max">
+            <span>Powered by <a href="https://fedums.com.ng" class="text-primary">Cointrix Inc</a></span>
+        </div>
     </x-authentication-card>
 </x-guest-layout>
