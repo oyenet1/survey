@@ -301,7 +301,7 @@ class SurveyPage extends Component implements HasForms
             $this->form->fill();
             Notification::make()
                 ->title('Submitted')
-                ->body('Survey submitted and send to database successfully')
+                ->body('Thanks for the feedback')
                 ->success()
                 ->send();
         }
