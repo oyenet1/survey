@@ -54,7 +54,6 @@
             <button class="px-6 py-2 mx-auto my-3 font-medium text-white bg-blue-500 rounded max-w-max">Submit</button>
         </form> --}}
     </div>
-    {{-- notification --}}
-    @livewire('database-notifications')
+
     <x-filament-actions::modals />
 </div>

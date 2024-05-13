@@ -16,6 +16,12 @@
     @filamentStyles
     @vite('resources/css/app.css')
 
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
 </head>
 
 <body class="antialiased bg-neutral-100">
@@ -32,8 +38,13 @@
     </div>
 
 
+    {{-- notification --}}
+    @livewire('notifications')
+    {{-- @livewire('database-notifications') --}}
+
     @filamentScripts
     @vite('resources/js/app.js')
+
 
 </body>
 
