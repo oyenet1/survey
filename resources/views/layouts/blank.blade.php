@@ -38,7 +38,7 @@
         </div>
         {{ $slot }}
     </div>
-    <span class="block pt-6 mx-auto text-center max-w-max">Powered by <a href="https://fedums.com.ng"
+    <span class="inline-block w-full pb-3 mx-auto text-center">Powered by <a href="https://fedums.com.ng"
             class="font-medium text-primary">Cointrix Inc</a></span>
 
 
