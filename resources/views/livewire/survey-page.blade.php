@@ -1,7 +1,8 @@
 <div>
     <div class="p-4 space-y-4 ">
         <h1 class="text-lg font-semibold text-center text-gray-500 capitailize">
-            {{ auth()->user()->role == 'admin' ? 'Admin' : 'Enumerator' }} <span>{{ auth()->user()->name }}</span>
+            <span>{{ auth()->user()->role == 'admin' ? 'Admin' : 'Enumerator' }}</span>
+            <span>{{ auth()->user()->name }}</span>
         </h1>
         <h1 class="text-2xl font-semibold text-center">Demographic Information</h1>
         <form wire:submit='create'>
