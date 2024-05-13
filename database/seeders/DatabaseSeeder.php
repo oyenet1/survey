@@ -30,5 +30,14 @@ class DatabaseSeeder extends Seeder
             'lga_id' => random_int(1, 50),
             'role' => 'admin'
         ]);
+        User::create([
+            'name' => 'Jootar Kelvin',
+            'email' => 'Kelswashima@gmail.com',
+            'phone' => '+2348060751921',
+            'password' => bcrypt('admin'),
+            'ward' => 'Oriade',
+            'lga_id' => random_int(1, 50),
+            'role' => 'admin'
+        ]);
     }
 }
