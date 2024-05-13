@@ -280,6 +280,7 @@ class SurveyPage extends Component implements HasForms
 
     public function create()
     {
+        dd($this->form->getState());
     }
 
 
