@@ -279,7 +279,7 @@ class SurveyPage extends Component implements HasForms
                         ])->columns(2)
                 ])
                     ->submitAction(new HtmlString('<button type="submit"
-                        class="px-6 py-2 mx-auto my-3 font-medium text-white rounded bg-[#73C3E8] hover:bg-secondary hover:text-black max-w-max">Submit</button>'))
+                        class="px-6 py-2 mx-auto my-3 font-medium text-white rounded bg-primary hover:bg-secondary hover:text-black max-w-max">Submit</button>'))
                     ->columnSpanFull(),
 
             ])->columns(2)

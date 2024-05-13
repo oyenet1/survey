@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Lga;
+use App\Models\State;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone')->nullable()->unique();
+            $table->string('ward')->nullable();
+            $table->string('role')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->foreignIdFor(Lga::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(State::class)->nullable()->constrained()->cascadeOnDelete();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
