@@ -5,6 +5,7 @@ namespace App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ManageRecords;
+use Illuminate\Support\Facades\Hash;
 
 class ManageUsers extends ManageRecords
 {
@@ -15,7 +16,7 @@ class ManageUsers extends ManageRecords
         return [
             Actions\CreateAction::make()
                 ->mutateFormDataUsing(function (array $data): array {
-                    $data['password'] = bcrypt($data['password']);
+                    $data['password'] = Hash::make($data['password']);
                     return $data;
                 }),
         ];
