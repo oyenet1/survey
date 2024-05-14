@@ -36,8 +36,8 @@ class SurveyResource extends Resource
                 Forms\Components\TextInput::make('wives')
                     ->numeric()
                     ->default(0),
-                Forms\Components\TextInput::make('location')
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('location')
+                //     ->maxLength(255),
                 Forms\Components\TextInput::make('occupation')
                     ->required()
                     ->maxLength(255)
@@ -55,8 +55,8 @@ class SurveyResource extends Resource
                 Forms\Components\Toggle::make('has_borrowed_before')
                     ->required(),
                 Forms\Components\TextInput::make('services'),
-                Forms\Components\TextInput::make('usage')
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('usage')
+                //     ->maxLength(255),
                 Forms\Components\TextInput::make('lenders'),
                 Forms\Components\TextInput::make('others'),
                 Forms\Components\Toggle::make('own_mobile_phone'),
@@ -78,8 +78,8 @@ class SurveyResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('fintechs')
                     ->required(),
-                Forms\Components\TextInput::make('mode_of_savings')
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('mode_of_savings')
+                //     ->maxLength(255),
                 Forms\Components\Toggle::make('pays_interest_on_loan'),
                 Forms\Components\Toggle::make('happy_to_pay_interest'),
                 Forms\Components\Select::make('state_id')
@@ -107,8 +107,8 @@ class SurveyResource extends Resource
                 Tables\Columns\TextColumn::make('wives')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('location')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('location')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('occupation')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('monthly_income_range')
@@ -119,8 +119,8 @@ class SurveyResource extends Resource
                     ->boolean(),
                 Tables\Columns\IconColumn::make('has_borrowed_before')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('usage')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('usage')
+                //     ->searchable(),
                 Tables\Columns\IconColumn::make('own_mobile_phone')
                     ->boolean(),
                 Tables\Columns\IconColumn::make('affected_by_insecurity')
@@ -135,8 +135,8 @@ class SurveyResource extends Resource
                     ->searchable(),
                 Tables\Columns\IconColumn::make('use_fintech')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('mode_of_savings')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('mode_of_savings')
+                //     ->searchable(),
                 Tables\Columns\IconColumn::make('pays_interest_on_loan')
                     ->boolean(),
                 Tables\Columns\IconColumn::make('happy_to_pay_interest')
