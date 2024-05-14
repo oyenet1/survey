@@ -17,19 +17,19 @@
 </head>
 
 <body class="antialiased">
-    <div class="w-full max-w-5xl my-8 mx-auto ng-gray-50 rounded-lg p-6 shadow">
+    <div class="w-full max-w-5xl p-6 mx-auto my-8 rounded-lg shadow ng-gray-50">
         <div class="p-4 space-y-6">
             <img src="{{ asset('img/logo.png') }}" alt="survey"
-                class="block rounded-full mx-auto aspect-video  h-40 object-cover">
+                class="block object-cover h-40 mx-auto rounded-full aspect-video">
             <div class="space-y-3">
                 <h1 class="text-3xl font-semibold text-center text-blue-500">Welcome to Survey Sphere</h1>
-                <p class="text-lg text-center font-semibold">Click on the state below to start</p>
+                <p class="text-lg font-semibold text-center">Click on the state below to start</p>
             </div>
 
-            <div class=" flex flex-wrap gap-6 justify-center">
-                @foreach (\App\Models\State::all() as $state)
+            <div class="flex flex-wrap justify-center gap-6 ">
+                @foreach (auth()->user()->states as $state)
                     <a href="{{ route('survey', $state->name) }}"
-                        class="capitalize text-lg py-2 rounded border shadow-sm px-6 ">{{ $state->name . ' state' }}</a>
+                        class="px-6 py-2 text-lg capitalize border rounded shadow-sm ">{{ $state->name . ' state' }}</a>
                 @endforeach
             </div>
         </div>
