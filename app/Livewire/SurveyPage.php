@@ -304,6 +304,8 @@ class SurveyPage extends Component implements HasForms
                 ->body('Thanks for the feedback')
                 ->success()
                 ->send();
+
+            return redirect()->route('thanks');
         }
     }
 
