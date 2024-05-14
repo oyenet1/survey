@@ -17,7 +17,7 @@ class ManageUsers extends ManageRecords
                 ->mutateFormDataUsing(function (array $data): array {
                     $data['password'] = bcrypt($data['password']);
                     return $data;
-                }),,
+                }),
         ];
     }
 }

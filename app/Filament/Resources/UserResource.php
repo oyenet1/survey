@@ -71,14 +71,16 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('states')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('states.name')
+                    ->badge()
+                    ->extraAttributes(['class' => 'capitalize'])
+                    ->separator(','),
 
-                Tables\Columns\TextColumn::make('state_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('surveys_count')
+                    ->label('Surveys')
+                    ->alignCenter()
+                    ->counts('surveys')
                     ->sortable(),
-
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
