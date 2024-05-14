@@ -17,26 +17,23 @@
 </head>
 
 <body class="antialiased">
-    <div class="w-full max-w-5xl p-6 mx-auto my-8 rounded-lg shadow ng-gray-50">
+    <div class="w-full max-w-5xl p-6 mx-auto my-8 rounded-lg ng-gray-50">
         <div class="p-4 space-y-6">
             <img src="{{ asset('img/logo.png') }}" alt="survey"
                 class="block object-cover h-40 mx-auto rounded-full aspect-video">
-            <div class="space-y-3">
-                <h1 class="text-3xl font-semibold text-center text-blue-500">Welcome to Survey Sphere</h1>
-                <p class="text-lg font-semibold text-center">Click on the state below to start</p>
-            </div>
 
             <div class="flex flex-wrap justify-center gap-6 ">
-                <div class="flex justify-center gap-8 p-6 w-[80%] mx-auto max-w-[300px] bg-white rounded-lg shadow-lg">
-                    <span class="block text-green-500">
+                <div
+                    class="flex justify-center flex-col gap-8 p-6 w-[80%] mx-auto max-w-[500px] bg-white rounded-lg shadow-lg">
+                    <span class="block mx-auto text-green-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-18 h-18">
+                            stroke="currentColor" class="w-24 h-24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
 
                     </span>
-                    <h1 class="text-xl font-bold text-center">
+                    <h1 class="py-6 text-xl font-bold text-center">
                         Thanks for taking the survey
                     </h1>
                 </div>
