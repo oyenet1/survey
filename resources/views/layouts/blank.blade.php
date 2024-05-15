@@ -33,6 +33,21 @@
             </a>
             <div class="space-y-3">
                 <h1 class="text-3xl font-semibold text-center text-primary">Welcome to Survey Sphere</h1>
+                <a href="{{ route('logout') }}"
+                    class="flex items-center px-4 py-2 mx-auto text-sm text-white bg-black rounded hover:bg-red-500 max-w-max"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                    </svg>
+
+                    <span class="pl-2">Logout</span>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
 
             </div>
         </div>
