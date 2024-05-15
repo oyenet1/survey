@@ -95,7 +95,7 @@ class SurveyPage extends Component implements HasForms
                                     'primary education' => 'Primary Education',
                                     'secondary education' => 'Secondary Education',
                                     'tertiary education' => 'Tertiary Education',
-                                    'illiterate' => 'Illiterate'
+                                    'not educated' => 'Not Educated'
                                 ])
                                 ->required()
                                 ->native(false),

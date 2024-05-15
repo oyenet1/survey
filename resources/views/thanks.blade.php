@@ -39,6 +39,8 @@
                     </h1>
                 </div>
             </div>
+            <a href="/" class="block px-6 py-2 mx-auto text-white rounded-md shadow-sm bg-primary max-w-max">Back
+                to Form</a>
         </div>
     </div>
 </body>

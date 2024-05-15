@@ -19,8 +19,10 @@
 <body class="antialiased">
     <div class="w-full max-w-5xl p-6 mx-auto my-8 rounded-lg shadow ng-gray-50">
         <div class="p-4 space-y-6">
-            <img src="{{ asset('img/logo.png') }}" alt="survey"
-                class="block object-cover h-40 mx-auto rounded-full aspect-video">
+            <a href="/" class="block mx-auto text-center max-w-max">
+                <img src="{{ asset('img/logo.png') }}" alt="survey"
+                    class="block object-cover h-32 mx-auto rounded-full aspect-video">
+            </a>
             <div class="space-y-3">
                 <h1 class="text-3xl font-semibold text-center text-blue-500">Welcome to Survey Sphere</h1>
                 <p class="text-lg font-semibold text-center">Click on the state below to start</p>
