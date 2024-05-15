@@ -36,8 +36,19 @@ class StateResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->extraAttributes(['class' => 'capitalize'])
                     ->searchable(),
                 Tables\Columns\TextColumn::make('capital')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('lgas_count')
+                    ->alignCenter()
+                    ->label('Local Government')
+                    ->counts('lgas')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('surveys_count')
+                    ->alignCenter()
+                    ->counts('surveys')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -40,6 +40,11 @@ class LgaResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('state.name')
                     ->numeric()
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('surveys_count')
+                    ->label('Total Surveys')
+                    ->counts('surveys')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

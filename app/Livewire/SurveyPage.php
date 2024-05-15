@@ -89,6 +89,13 @@ class SurveyPage extends Component implements HasForms
                                 ->nullable()
                                 ->integer(),
 
+                            Radio::make('allow_wife_to_visit_a_bank')
+                                ->label('⁠Would you allow your wife to visit a bank branch for a transaction?')
+                                ->extraAttributes(['class' => 'focus:text-primary text-primary'])
+                                ->boolean()
+                                ->inline()
+                                ->inlineLabel(false),
+
                             Select::make('education')
                                 ->label('What is your highest level of education?')
                                 ->options([
@@ -177,6 +184,12 @@ class SurveyPage extends Component implements HasForms
                                 ->inline()
                                 ->inlineLabel(false)
                                 ->required(),
+                            TextInput::make('phone')
+                                ->label('Phone number')
+                                ->default(null)
+                                ->prefix('+234')
+                                ->nullable()
+                                ->tel(),
                             Select::make('phone_type')
                                 ->options([
                                     'feature' => 'Feature Phone',
@@ -190,9 +203,8 @@ class SurveyPage extends Component implements HasForms
                                 ->label('Do you conduct banking transactions using your mobile phone?')
                                 ->extraAttributes(['class' => 'focus:text-primary text-primary'])
                                 ->boolean()
-                                // ->inline()
+                                ->inline()
                                 ->inlineLabel(false)
-                                ->columnSpanFull()
                                 ->required(),
                         ])->columns(2),
                     Wizard\Step::make('Step 3')
@@ -215,15 +227,26 @@ class SurveyPage extends Component implements HasForms
                                     'debit card' => "Debit Card",
                                     'bank transfer' => "Bank Transfer"
                                 ])
-                                //   ->options([
-                                //     'cash',
-                                //     'pos',
-                                //     'debit-card',
-                                //     'bank-transfer'
-                                // ])
+                                ->columns(4)
+                                ->gridDirection('column')
+
                                 ->extraAttributes(['class' => 'capitalize'])
                                 ->required()
                                 ->columnSpanFull(),
+
+
+                            Select::make('lga_id')
+                                // ->relationship('lga')
+                                ->options($this->state->lgas()->pluck('name', 'id'))
+                                ->label('Local Goverment Area')
+                                ->native(false)
+                                ->searchable()
+                                ->required(),
+
+                            TextInput::make('location')
+                                ->label('Community/location')
+                                ->default(null)
+                                ->nullable(),
 
                             Radio::make('affected_by_insecurity')
                                 ->label('Does insecurity affect your daily work life?')
