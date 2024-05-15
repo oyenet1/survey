@@ -49,12 +49,18 @@
                     @csrf
                 </form>
 
+                <h1 class="text-lg font-semibold text-center text-gray-500 capitailize">
+                    <span>{{ auth()->user()->role == 'admin' ? 'Admin: ' : 'Enumerator: ' }}</span>
+                    <span>{{ auth()->user()->name }}</span>
+                </h1>
+
             </div>
         </div>
-        {{ $slot }}
+        @yield('content')
+        {{ $slot ?? '' }}
     </div>
-    <span class="inline-block w-full pb-3 mx-auto text-center">Powered by <a href="https://fedums.com.ng"
-            class="font-medium text-primary">Cointrix Inc</a></span>
+    <span class="inline-block w-full pb-3 mx-auto text-center">Powered by <a target="_blank"
+            href="https://fedums.com.ng" class="font-bold text-primary">Cointrix Inc</a></span>
 
 
     {{-- notification --}}
