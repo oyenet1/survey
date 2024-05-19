@@ -5,29 +5,30 @@ namespace App\Filament\Widgets;
 use Filament\Support\RawJs;
 use Filament\Widgets\ChartWidget;
 
-class AgentStat extends ChartWidget
+class AgeRangeStat extends ChartWidget
 {
     public $data;
     protected static ?string $maxHeight = '350px';
-    protected static ?int $sort = 2;
-    protected static ?string $heading = 'Surveys by Agents';
+    protected static ?int $sort = 3;
+    protected static ?string $heading = 'Surveys by Age Range';
+
 
     protected function getData(): array
     {
-        $this->data = agentStats();
+        $this->data = ageRangeStats();
         return [
             'datasets' => [
                 [
-                    'label' => 'Shirt Size',
+                    'label' => 'Age Range',
                     'data' => array_values($this->data),
                     'backgroundColor' => [
-                        '#3498db', // Blue
+                        '#e67e22', // Orange
+                        '#1abc9c',
                         '#2ecc71', // Green
                         '#e74c3c', // Red
                         '#9b59b6', // Purple
                         '#f1c40f', // Yellow
-                        '#e67e22', // Orange
-                        '#1abc9c'
+                        '#3498db', // Blue
                     ],
                     // 'backgroundColor' => ['red', '#03df0f', ''],
                     'borderColor' => 'white',
@@ -37,13 +38,13 @@ class AgentStat extends ChartWidget
 
                 ],
             ],
-            'labels' => array_map('ucfirst', array_keys($this->data)),
+            'labels' => replaceValue(array_keys($this->data)),
         ];
     }
 
     protected function getType(): string
     {
-        return 'pie';
+        return 'doughnut';
     }
 
     protected function getOptions(): RawJs
