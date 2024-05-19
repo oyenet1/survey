@@ -17,6 +17,7 @@ class ManageUsers extends ManageRecords
             Actions\CreateAction::make()
                 ->mutateFormDataUsing(function (array $data): array {
                     $data['password'] = Hash::make($data['password']);
+                    $data['role'] = 'enumerator';
                     return $data;
                 }),
         ];
