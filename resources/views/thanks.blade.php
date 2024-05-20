@@ -38,7 +38,7 @@
                         Thanks for taking the survey
                     </h1>
                     <button class="text-lg text-center max-w-max">Your total survey is
-                        {{ auth()->user()->surveys->count() }}</button>
+                        <span class="font-medium">{{ auth()->user()->surveys->count() }}</span></button>
                 </div>
             </div>
             <a href="javascript:history.go(-1)"
