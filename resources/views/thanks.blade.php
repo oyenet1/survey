@@ -37,7 +37,7 @@
                     <h1 class="py-6 text-xl font-bold text-center">
                         Thanks for taking the survey
                     </h1>
-                    <button class="text-lg text-center max-w-max">Your total survey is
+                    <button class="mx-auto text-lg text-center max-w-max">Your total survey is
                         <span class="font-medium">{{ auth()->user()->surveys->count() }}</span></button>
                 </div>
             </div>
