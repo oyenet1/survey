@@ -37,7 +37,7 @@ class WivesStat extends ChartWidget
 
                 ],
             ],
-            'labels' => array_keys($this->data),
+            'labels' => wifeNumbers(array_keys($this->data)),
         ];
     }
 

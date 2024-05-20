@@ -138,3 +138,28 @@ function replaceBoolean(array $array): array
 
     return $array;
 }
+function wifeNumbers(array $array): array
+{
+    $mapping = [
+        null => 'Nil',
+        0 => 'No Wife',
+        1 => '1 Wife',
+        2 => '1 Wives',
+        3 => '3 Wives',
+        4 => '4 Wives',
+        5 => '5 Wives',
+        6 => '6 Wives',
+        7 => '7 Wives',
+        8 => '8 Wives',
+        9 => '9 Wives',
+        10 => '10 Wives',
+    ];
+
+    foreach ($array as &$value) {
+        if (array_key_exists($value, $mapping)) {
+            $value = $mapping[$value];
+        }
+    }
+
+    return $array;
+}
