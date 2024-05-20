@@ -141,10 +141,10 @@ function replaceBoolean(array $array): array
 function wifeNumbers(array $array): array
 {
     $mapping = [
-        null => 'Nil',
+        null => 'No answer',
         0 => 'No Wife',
         1 => '1 Wife',
-        2 => '1 Wives',
+        2 => '2 Wives',
         3 => '3 Wives',
         4 => '4 Wives',
         5 => '5 Wives',
