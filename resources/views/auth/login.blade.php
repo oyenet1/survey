@@ -50,10 +50,9 @@
             </div>
         </form>
         <span class="block w-full mx-auto my-2 text-lg font-medium text-center">Admin Login
-            <a href="/admin" class="font-semibold underline text-primary">here</a>
+            <a href="/admin" target="_blank" class="font-semibold underline text-primary">here</a>
         </span>
     </x-authentication-card>
     <span class="block mx-auto text-center max-w-max">Powered by <a href="https://fedums.com.ng"
             class="font-medium text-primary">Cointrix Inc</a></span>
-
 </x-guest-layout>

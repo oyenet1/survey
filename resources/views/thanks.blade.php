@@ -37,7 +37,8 @@
                     <h1 class="py-6 text-xl font-bold text-center">
                         Thanks for taking the survey
                     </h1>
-                    <button class="max-w-max"></button>
+                    <button class="text-lg text-center max-w-max">Your total survey is
+                        {{ auth()->user()->surveys->count() }}</button>
                 </div>
             </div>
             <a href="javascript:history.go(-1)"
