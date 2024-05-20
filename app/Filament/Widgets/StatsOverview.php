@@ -21,6 +21,8 @@ class StatsOverview extends BaseWidget
             Stat::make('Yobe State', Survey::where('state_id', 6)->count()),
             Stat::make('Male', Survey::where('gender', 'male')->count()),
             Stat::make('Female', Survey::where('gender', 'female')->count()),
+            Stat::make('Married', Survey::where('marital_status', true)->count()),
+            Stat::make('Single', Survey::where('marital_status', false)->count()),
             // Stat::make('Average time on page', '3:12'),
         ];
     }

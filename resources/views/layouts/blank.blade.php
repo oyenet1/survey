@@ -51,7 +51,7 @@
 
                 <h1 class="text-lg font-semibold text-center text-gray-500 capitailize">
                     <span>{{ auth()->user()->role == 'admin' ? 'Admin: ' : 'Enumerator: ' }}</span>
-                    <span>{{ auth()->user()->name }}</span>
+                    <span class="capitalize">{{ auth()->user()->name }}</span>
                 </h1>
 
             </div>

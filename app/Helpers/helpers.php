@@ -33,6 +33,42 @@ function educationStats()
         ->toArray();
 }
 
+function incomeStats()
+{
+    return \App\Models\Survey::selectRaw('monthly_income_range, count(id) as total')
+        ->groupBy('monthly_income_range')
+        ->orderBy('monthly_income_range')
+        ->pluck('total', 'monthly_income_range')
+        ->toArray();
+}
+
+function wivesStats()
+{
+    return \App\Models\Survey::selectRaw('wives, count(id) as total')
+        ->groupBy('wives')
+        ->orderBy('wives')
+        ->pluck('total', 'wives')
+        ->toArray();
+}
+
+function allowWivesStats()
+{
+    return \App\Models\Survey::selectRaw('allow_wife_to_visit_a_bank, count(id) as total')
+        ->groupBy('allow_wife_to_visit_a_bank')
+        ->orderBy('allow_wife_to_visit_a_bank')
+        ->pluck('total', 'allow_wife_to_visit_a_bank')
+        ->toArray();
+}
+
+function occupationalStats()
+{
+    return \App\Models\Survey::selectRaw('occupation, count(id) as total')
+        ->groupBy('occupation')
+        ->orderBy('occupation')
+        ->pluck('total', 'occupation')
+        ->toArray();
+}
+
 // function getRange(array $dat): array
 // {
 //     $lst = [
@@ -76,6 +112,21 @@ function replaceValue(array $array): array
         3 => '40 - 49',
         4 => '50 - 59',
         5 => '60 & above',
+    ];
+
+    foreach ($array as &$value) {
+        if (array_key_exists($value, $mapping)) {
+            $value = $mapping[$value];
+        }
+    }
+
+    return $array;
+}
+function replaceBoolean(array $array): array
+{
+    $mapping = [
+        0 => 'NO',
+        1 => 'YES'
     ];
 
     foreach ($array as &$value) {

@@ -93,6 +93,7 @@ class SurveyPage extends Component implements HasForms
                                 ->label('⁠Would you allow your wife to visit a bank branch for a transaction?')
                                 ->extraAttributes(['class' => 'focus:text-primary text-primary'])
                                 ->boolean()
+                                ->required()
                                 ->inline()
                                 ->inlineLabel(false),
 

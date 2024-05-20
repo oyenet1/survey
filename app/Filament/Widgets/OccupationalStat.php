@@ -5,20 +5,20 @@ namespace App\Filament\Widgets;
 use Filament\Support\RawJs;
 use Filament\Widgets\ChartWidget;
 
-class EducationalStat extends ChartWidget
+class OccupationalStat extends ChartWidget
 {
     public $data;
     protected static ?string $maxHeight = '450px';
-    protected static ?int $sort = 4;
-    protected static ?string $heading = 'Educational Stat';
+    protected static ?int $sort = 8;
+    protected static ?string $heading = 'Occupational Stat';
 
     protected function getData(): array
     {
-        $this->data = educationStats();
+        $this->data = occupationalStats();
         return [
             'datasets' => [
                 [
-                    'label' => 'Education',
+                    // 'label' => 'Occupation',
                     'data' => array_values($this->data),
                     'backgroundColor' => [
                         '#2ecc71', // Green

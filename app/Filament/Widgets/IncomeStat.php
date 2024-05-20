@@ -5,24 +5,27 @@ namespace App\Filament\Widgets;
 use Filament\Support\RawJs;
 use Filament\Widgets\ChartWidget;
 
-class EducationalStat extends ChartWidget
+class IncomeStat extends ChartWidget
 {
     public $data;
     protected static ?string $maxHeight = '450px';
-    protected static ?int $sort = 4;
-    protected static ?string $heading = 'Educational Stat';
+    protected static ?int $sort = 5;
+    protected static ?string $heading = 'Monthly Income Stat';
 
     protected function getData(): array
     {
-        $this->data = educationStats();
+        $this->data = incomeStats();
         return [
             'datasets' => [
                 [
-                    'label' => 'Education',
+                    'label' => 'Monthly Income',
                     'data' => array_values($this->data),
                     'backgroundColor' => [
+                        '#e67e22', // Orange
+                        '#1abc9c',
                         '#2ecc71', // Green
-                        '#f74c3c', // Red
+                        '#e74c3c', // Red
+                        '#9b59b6', // Purple
                         '#f1c40f', // Yellow
                         '#3498db', // Blue
                     ],
@@ -30,7 +33,7 @@ class EducationalStat extends ChartWidget
                     'borderColor' => 'white',
                     // 'categoryPercentage' => 0.1,
                     'borderWidth' => 3,
-                    // 'barPercentage' => 1,
+                    'barPercentage' => .8,
 
                 ],
             ],
@@ -77,8 +80,7 @@ class EducationalStat extends ChartWidget
                         drawTicks:false,
                     },
                 },
-            },
-            indexAxis: 'y'
+            }
         }
     JS);
     }
