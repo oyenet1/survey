@@ -2,6 +2,8 @@
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
+            <span class="block mx-auto text-center max-w-max">Powered by <a href="https://fedums.com.ng"
+                    class="font-medium text-primary">Cointrix Inc</a></span>
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -17,8 +19,8 @@
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required
-                    autofocus autocomplete="username" />
+                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')"
+                    required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
@@ -47,9 +49,11 @@
                 </x-button>
             </div>
         </form>
-
-        <span class="block mx-auto text-center max-w-max">Powered by <a href="https://fedums.com.ng"
-                class="font-medium text-primary">Cointrix Inc</a></span>
+        <span class="block w-full mx-auto my-2 text-lg font-medium text-center">Admin Login
+            <a href="/admin" class="font-semibold underline text-primary">here</a>
+        </span>
     </x-authentication-card>
+    <span class="block mx-auto text-center max-w-max">Powered by <a href="https://fedums.com.ng"
+            class="font-medium text-primary">Cointrix Inc</a></span>
 
 </x-guest-layout>

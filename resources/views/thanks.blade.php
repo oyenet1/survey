@@ -37,6 +37,7 @@
                     <h1 class="py-6 text-xl font-bold text-center">
                         Thanks for taking the survey
                     </h1>
+                    <button class="max-w-max"></button>
                 </div>
             </div>
             <a href="javascript:history.go(-1)"
