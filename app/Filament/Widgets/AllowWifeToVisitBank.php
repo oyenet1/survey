@@ -24,7 +24,7 @@ class AllowWifeToVisitBank extends ChartWidget
                     //     '#e74c3c', // Red
                     //     '#10a5b6', //
                     // ],
-                    'backgroundColor' => ['red', '#03df0f'],
+                    'backgroundColor' => ['red', '#03df0f', '#0f0f0f'],
                     'borderColor' => 'white',
                     // 'categoryPercentage' => 0.1,
                     'borderWidth' => 3,
