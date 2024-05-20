@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('auth');
 
-Route::get('/test', function () {
+Route::get('/testok', function () {
     return Hash::make('12345');
 });
 

@@ -41,6 +41,10 @@ class Survey extends Model
             if (auth()->check()) {
                 $survey->user_id = auth()->id();
             }
+
+            if (!$survey->allow_wife_to_visit_a_bank) {
+                $survey->user_id = 0;
+            }
         });
     }
 }

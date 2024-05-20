@@ -125,6 +125,7 @@ function replaceValue(array $array): array
 function replaceBoolean(array $array): array
 {
     $mapping = [
+        null => 'Nil',
         0 => 'NO',
         1 => 'YES'
     ];
