@@ -27,7 +27,9 @@ class AgentStat extends ChartWidget
                         '#9b59b6', // Purple
                         '#f1c40f', // Yellow
                         '#e67e22', // Orange
-                        '#1abc9c'
+                        '#1abc9c',
+                        '#0bf9b6',
+                        '#fb59ff'
                     ],
                     // 'backgroundColor' => ['red', '#03df0f', ''],
                     'borderColor' => 'white',
