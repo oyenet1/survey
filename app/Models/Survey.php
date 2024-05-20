@@ -43,7 +43,7 @@ class Survey extends Model
             }
 
             if (!$survey->allow_wife_to_visit_a_bank) {
-                $survey->user_id = 0;
+                $survey->allow_wife_to_visit_a_bank = 0;
             }
         });
     }
