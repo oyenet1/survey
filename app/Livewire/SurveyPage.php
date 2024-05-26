@@ -121,7 +121,7 @@ class SurveyPage extends Component implements HasForms
                                     'below 20000' => 'Below 20,000 NGN',
                                     '20000 - 50000' => '20,000 - 50,000 NGN',
                                     '50000 - 100000' => '50,000 - 100,000 NGN',
-                                    '10000 - 200000' => '100,000 - 200,000 NGN',
+                                    '100000 - 200000' => '100,000 - 200,000 NGN',
                                     'above 200000' => 'Above 200,000 NGN'
                                 ])
                                 ->label('What is your approximate monthly income?')
