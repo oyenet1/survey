@@ -2,16 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SurveyResource\Pages;
-use App\Filament\Resources\SurveyResource\RelationManagers;
-use App\Models\Survey;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Survey;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use App\Filament\Exports\SurveyExporter;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Actions\ExportBulkAction;
+use App\Filament\Resources\SurveyResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\SurveyResource\RelationManagers;
 
 class SurveyResource extends Resource
 {
@@ -95,6 +97,10 @@ class SurveyResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->bulkActions([
+                ExportBulkAction::make()
+                    ->exporter(SurveyExporter::class)
+            ])
             ->columns([
                 Tables\Columns\TextColumn::make('education')
                     ->searchable(),
