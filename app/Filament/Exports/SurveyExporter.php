@@ -14,7 +14,44 @@ class SurveyExporter extends Exporter
     public static function getColumns(): array
     {
         return [
-            //
+            ExportColumn::make('id')
+                ->label('ID'),
+            ExportColumn::make('education'),
+            ExportColumn::make('age_range'),
+            ExportColumn::make('gender'),
+            ExportColumn::make('marital_status'),
+            ExportColumn::make('wives'),
+            ExportColumn::make('location'),
+            ExportColumn::make('occupation'),
+            ExportColumn::make('monthly_income_range'),
+            ExportColumn::make('have_a_savings'),
+            ExportColumn::make('have_bank'),
+            ExportColumn::make('no_bank_account_reasons'),
+            ExportColumn::make('has_borrowed_before'),
+            ExportColumn::make('services'),
+            ExportColumn::make('usage'),
+            ExportColumn::make('lenders'),
+            ExportColumn::make('others'),
+            ExportColumn::make('own_mobile_phone'),
+            ExportColumn::make('affected_by_insecurity'),
+            ExportColumn::make('insecurity_details'),
+            ExportColumn::make('phone_type'),
+            ExportColumn::make('feel_safe'),
+            ExportColumn::make('use_phone'),
+            ExportColumn::make('saving_methods'),
+            ExportColumn::make('payment_methods'),
+            ExportColumn::make('use_fintech'),
+            ExportColumn::make('fintechs'),
+            ExportColumn::make('mode_of_savings'),
+            ExportColumn::make('pays_interest_on_loan'),
+            ExportColumn::make('happy_to_pay_interest'),
+            ExportColumn::make('state.name'),
+            ExportColumn::make('user_id'),
+            ExportColumn::make('lga.name'),
+            ExportColumn::make('created_at'),
+            ExportColumn::make('updated_at'),
+            ExportColumn::make('allow_wife_to_visit_a_bank'),
+            ExportColumn::make('phone'),
         ];
     }
 
