@@ -29,7 +29,7 @@ class SurveyExporter extends Exporter
             ExportColumn::make('no_bank_account_reasons'),
             ExportColumn::make('has_borrowed_before'),
             ExportColumn::make('services'),
-            ExportColumn::make('usage'),
+            // ExportColumn::make('usage'),
             ExportColumn::make('lenders'),
             ExportColumn::make('others'),
             ExportColumn::make('own_mobile_phone'),
@@ -46,10 +46,11 @@ class SurveyExporter extends Exporter
             ExportColumn::make('pays_interest_on_loan'),
             ExportColumn::make('happy_to_pay_interest'),
             ExportColumn::make('state.name'),
-            ExportColumn::make('user_id'),
+            ExportColumn::make('enumerator.name')
+                ->label('Enumerator'),
             ExportColumn::make('lga.name'),
-            ExportColumn::make('created_at'),
-            ExportColumn::make('updated_at'),
+            // ExportColumn::make('created_at'),
+            // ExportColumn::make('updated_at'),
             ExportColumn::make('allow_wife_to_visit_a_bank'),
             ExportColumn::make('phone'),
         ];
