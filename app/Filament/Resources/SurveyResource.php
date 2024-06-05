@@ -97,10 +97,9 @@ class SurveyResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->bulkActions([
-                ExportBulkAction::make()
-                    ->exporter(SurveyExporter::class)
-            ])
+            // ->bulkActions([
+
+            // ])
             ->columns([
                 Tables\Columns\TextColumn::make('education')
                     ->searchable(),
@@ -174,7 +173,9 @@ class SurveyResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
+                    ExportBulkAction::make()
+                        ->exporter(SurveyExporter::class)
                 ]),
             ]);
     }
